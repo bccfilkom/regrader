@@ -161,14 +161,14 @@ class Site extends MY_Controller
 				return;		
 			}
 
-			/*$grader_output = $this->build_grader();
+			$grader_output = $this->build_grader();
 			if ( ! empty($grader_output))
 			{
 				$data['heading'] = 'Error: cannot build grader engine';
 				$data['content'] = '<p>Please make sure that the web server has the permission to write to <b>' . getcwd() . '/moe</b>.<p>Build output:</p><pre>' . html_entity_decode($grader_output) . '</pre>';
 				$this->load->view('site/install', $data);
 				return;	
-			}*/
+			}
 
 			$this->create_db_schema();
 			$this->create_db_constraints();
