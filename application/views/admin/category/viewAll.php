@@ -68,7 +68,7 @@
 						<td><?php echo $v['name']; ?></td>
 						<td class="category-membercount-td"><?php echo $v['user_cnt']; ?></td>
 						<td class="operations-td"><a href="<?php echo site_url('admin/category/edit/' . $v['id'] . '/' . $page_offset); ?>" rel="tooltip" title="<?php echo $this->lang->line('edit'); ?>"><i class= "glyphicon glyphicon-pencil"></i></a>
-							<?php if ($v['id'] > 1) : ?>
+							<?php if ($v['id'] > 2) : ?>
 								<a href="<?php echo site_url('admin/category/delete/' . $v['id'] . '/' . $page_offset); ?>" rel="tooltip" title="<?php echo $this->lang->line('delete'); ?>" onclick="return confirm('<?php printf($this->lang->line('confirm_delete_category'), $v['id'], $v['name']); ?>');"><i class="glyphicon glyphicon-trash"></i></td>
 							<?php endif; ?>
 						</tr>

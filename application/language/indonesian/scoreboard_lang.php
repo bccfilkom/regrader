@@ -2,7 +2,7 @@
 
 $lang['public_scoreboard'] = 'Tautan Umum';
 $lang['public_raw_scoreboard'] = 'Tautan Umum Mentah';
-$lang['no_contest'] = 'Belum ada kontes.';
+$lang['no_contest'] = 'Belum ada ujian.';
 $lang['as_admin'] = 'Sebagai Administrator';
 $lang['as_contestant'] = 'Sebagai Peserta';
 $lang['score'] = 'Nilai';

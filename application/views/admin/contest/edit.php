@@ -75,7 +75,7 @@
 						<p>(<?php echo $this->lang->line('no_category'); ?>)</p>
 					<?php endif; ?>
 					<div class = "col-sm-10">
-						<?php foreach ($contest_members as $k => $v): if ($k == 1) continue; ?>
+						<?php foreach ($contest_members as $k => $v): if ($k == 1 || $k == 2) continue; ?>
 							<div class="checkbox">
 								<label>
 									<input name="<?php echo 'c' . $k; ?>" type="checkbox" value="1" <?php echo set_checkbox('c' . $k, '1', @$v['present']); ?>/>

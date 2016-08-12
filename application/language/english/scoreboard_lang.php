@@ -2,7 +2,7 @@
 
 $lang['public_scoreboard'] = 'Public Scoreboard';
 $lang['public_raw_scoreboard'] = 'Public Raw Scoreboard';
-$lang['no_contest'] = 'No contests.';
+$lang['no_contest'] = 'No exam.';
 $lang['as_admin'] = 'As Administrator';
 $lang['as_contestant'] = 'As Contestant';
 $lang['score'] = 'Score';

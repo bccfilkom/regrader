@@ -1,15 +1,15 @@
 <?php
 
-$lang['contest_list'] = 'Contest List';
-$lang['add_new_contest'] = 'Add New Contest';
-$lang['showing_contests'] = 'Showing contest %d through %d from %d total.';
-$lang['edit_contest'] = 'Edit Contest';
-$lang['add_contest'] = 'Add Contest';
-$lang['add_contest_successful'] = 'Contest successfully added.';
-$lang['edit_contest_successful'] = 'Contest successfully edited.';
-$lang['delete_contest_successful'] = 'Contest successfully deleted.';
-$lang['no_contest'] = 'No contests.';
-$lang['new_contest'] = 'New Contest';
+$lang['contest_list'] = 'Exam List';
+$lang['add_new_contest'] = 'Add New Exam';
+$lang['showing_contests'] = 'Showing exam %d through %d from %d total.';
+$lang['edit_contest'] = 'Edit Exam';
+$lang['add_contest'] = 'Add Exam';
+$lang['add_contest_successful'] = 'Exam successfully added.';
+$lang['edit_contest_successful'] = 'Exam successfully edited.';
+$lang['delete_contest_successful'] = 'Exam successfully deleted.';
+$lang['no_contest'] = 'No Exam.';
+$lang['new_contest'] = 'New Exam';
 $lang['confirm_delete_contest'] = 'Are you sure you want to delete contest %d: %s?';
 $lang['start_time'] = 'Start Time';
 $lang['end_time'] = 'End Time';
@@ -24,7 +24,7 @@ $lang['not_active'] = 'not active';
 $lang['no_category'] = 'No categories';
 $lang['no_language'] = 'No languages';
 
-$lang['edit_contest_problems'] = 'Edit Contest Problems';
+$lang['edit_contest_problems'] = 'Edit Exam Problems';
 $lang['add_problem'] = 'Add Problem';
 
 /* End of file contest_lang.php */
