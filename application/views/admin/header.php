@@ -24,23 +24,125 @@
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
+<style type="text/css">
+	.navbar-default {
+  background-color: #4485ce;
+  border-color: #2e5c90;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #d1e9ff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #d1e9ff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #4485ce;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-toggle {
+  border-color: #2e5c90;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #d1e9ff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #d1e9ff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #d1e9ff;
+    background-color: #2e5c90;
+  }
+}
+</style>
+<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="nav navbar-nav">
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> <?php echo $this->lang->line('manage'); ?> <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="<?php echo site_url('admin/contest'); ?>"><i class="glyphicon glyphicon-fire"></i> <?php echo $this->lang->line('contests'); ?></a></li>
-								<li><a href="<?php echo site_url('admin/problem'); ?>"><i class="glyphicon glyphicon-book"></i> <?php echo $this->lang->line('problems'); ?></a></li>
-								<li><a href="<?php echo site_url('admin/language'); ?>"><i class="glyphicon glyphicon-globe"></i> <?php echo $this->lang->line('languages'); ?></a></li>
-								<li><a href="<?php echo site_url('admin/category'); ?>"><i class="glyphicon glyphicon-flag"></i> <?php echo $this->lang->line('categories'); ?></a></li>
-								<li><a href="<?php echo site_url('admin/user'); ?>"><i class="glyphicon glyphicon-user"></i> <?php echo $this->lang->line('users'); ?></a></li>
-								<li><a href="<?php echo site_url('admin/file'); ?>"><i class="glyphicon glyphicon-file"></i> <?php echo $this->lang->line('files'); ?></a></li>
-								<li><a href="<?php echo site_url('admin/option'); ?>"><i class="glyphicon glyphicon-screenshot"></i> <?php echo $this->lang->line('options'); ?></a></li>
-							</ul>
-						</li>
+						<?php if (!$this->identity->is_dosen()) { ?>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> <?php echo $this->lang->line('manage'); ?> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="<?php echo site_url('admin/contest'); ?>"><i class="glyphicon glyphicon-fire"></i> <?php echo $this->lang->line('contests'); ?></a></li>
+									<li><a href="<?php echo site_url('admin/problem'); ?>"><i class="glyphicon glyphicon-book"></i> <?php echo $this->lang->line('problems'); ?></a></li>
+									<li><a href="<?php echo site_url('admin/language'); ?>"><i class="glyphicon glyphicon-globe"></i> <?php echo $this->lang->line('languages'); ?></a></li>
+									<li><a href="<?php echo site_url('admin/category'); ?>"><i class="glyphicon glyphicon-flag"></i> <?php echo $this->lang->line('categories'); ?></a></li>
+									<li><a href="<?php echo site_url('admin/user'); ?>"><i class="glyphicon glyphicon-user"></i> <?php echo $this->lang->line('users'); ?></a></li>
+									<li><a href="<?php echo site_url('admin/file'); ?>"><i class="glyphicon glyphicon-file"></i> <?php echo $this->lang->line('files'); ?></a></li>
+									<li><a href="<?php echo site_url('admin/option'); ?>"><i class="glyphicon glyphicon-screenshot"></i> <?php echo $this->lang->line('options'); ?></a></li>
+								</ul>
+							</li>
+						<?php } else { ?>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> <?php echo $this->lang->line('manage'); ?> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="<?php echo site_url('admin/contest'); ?>"><i class="glyphicon glyphicon-fire"></i> <?php echo $this->lang->line('contests'); ?></a></li>
+									<li><a href="<?php echo site_url('admin/problem'); ?>"><i class="glyphicon glyphicon-book"></i> <?php echo $this->lang->line('problems'); ?></a></li>
+								</ul>
+							</li>
+						<?php } ?>
+
 						<?php if ($page == 'contest') : ?><li class="active"><a href="<?php echo site_url('admin/contest'); ?>"><i class="glyphicon glyphicon-fire"></i> <?php echo $this->lang->line('contests'); ?></a></li><?php endif; ?>
 						<?php if ($page == 'problem') : ?><li class="active"><a href="<?php echo site_url('admin/problem'); ?>"><i class="glyphicon glyphicon-book"></i> <?php echo $this->lang->line('problems'); ?></a></li><?php endif; ?>
 						<?php if ($page == 'language') : ?><li class="active"><a href="<?php echo site_url('admin/language'); ?>"><i class="glyphicon glyphicon-globe"></i> <?php echo $this->lang->line('languages'); ?></a></li><?php endif; ?>
@@ -84,7 +186,7 @@
 		<div class="col-md-12">
 			<?php if ( ! empty($left_logo)) : ?>
 			<div class="site_logo">
-				<img src="<?php echo base_url(); ?>files/<?php echo $left_logo; ?>" />
+				<img style="margin-top: 13px;" src="<?php echo base_url(); ?>files/<?php echo $left_logo; ?>" />
 			</div>
 			<?php endif; ?>
 			<div class="site_name">

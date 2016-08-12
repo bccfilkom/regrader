@@ -1,3 +1,11 @@
+<style type="text/css">
+	
+.table thead tr th {
+	background-color: #4485ce;
+}
+
+</style>
+
 <div class="container">
 	<div class="modal" id="submit">
 		<?php if ($this->session->flashdata('contest_has_ended') || strtotime($active_contest_end_time) < time()) : ?>

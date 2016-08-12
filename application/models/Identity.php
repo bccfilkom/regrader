@@ -90,7 +90,7 @@ class Identity extends CI_Model
 	 */
 	public function is_contestant()
 	{
-		return $this->get_session_data('category_id') > 1;
+		return $this->get_session_data('category_id') > 2;
 	}
 
 	/**
@@ -102,8 +102,12 @@ class Identity extends CI_Model
 	 */
 	public function is_admin()
 	{
-		return $this->get_session_data('category_id') == 1;
+		return $this->get_session_data('category_id') == 1 || $this->get_session_data('category_id') == 2;
 	}
+
+	public function is_dosen() {
+        return $this->get_session_data('category_id') == 2;
+    }
 
 	/**
 	 * Retrieves the current user ID

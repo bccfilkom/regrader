@@ -20,6 +20,8 @@ class File extends Admin_Controller
 		parent::__construct();
 		$this->load->model('public_file_manager');
 		$this->load->language('public_file');
+
+        if ($this->identity->is_dosen()) exit('403 forbidden');
 	}
 
 	/**

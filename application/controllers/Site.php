@@ -429,6 +429,7 @@ class Site extends MY_Controller
 	private function insert_default_rows()
 	{
 		$this->db->query("INSERT INTO `category` (`id`, `name`) VALUES (1, 'Administrator')");
+        $this->db->query("INSERT INTO `category` (`id`, `name`) VALUES (2, 'Dosen / Asisten Praktikum')");
 		
 		$this->db->query("INSERT INTO `user` (`id`, `name`, `username`, `password`, `institution`, `category_id`, `last_activity`) VALUES (1, 'Administrator', 'admin', MD5('admin'), '-', 1, '0000-00-00 00:00:00')");
 	

@@ -1,3 +1,10 @@
+<style type="text/css">
+	
+.table thead tr th {
+	background-color: #4485ce;
+}
+
+</style>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">

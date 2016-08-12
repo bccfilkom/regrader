@@ -19,6 +19,8 @@ class Option extends Admin_Controller
 	{
 		parent::__construct();
 		$this->load->language('option');
+
+        if ($this->identity->is_dosen()) exit('403 forbidden');
 	}
 
 	/**

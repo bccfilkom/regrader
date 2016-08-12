@@ -21,6 +21,8 @@ class Language extends Admin_Controller
 		$this->load->model('language_manager');
 		$this->load->library('pagination');
 		$this->load->language('language');
+
+        if ($this->identity->is_dosen()) exit('403 forbidden');
 	}
 
 	/**

@@ -1,4 +1,5 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Controller for admin category page
@@ -21,6 +22,7 @@ class Category extends Admin_Controller
 		$this->load->model('category_manager');
 		$this->load->library('pagination');
 		$this->load->language('category');
+        if ($this->identity->is_dosen()) exit('403 forbidden');
 	}
 
 	/**

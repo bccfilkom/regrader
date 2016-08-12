@@ -14,8 +14,98 @@
 </head>
 
 <body>
-	
-<div class="navbar navbar-inverse navbar-fixed-top">
+<style type="text/css">
+	.navbar-default {
+  background-color: #4485ce;
+  border-color: #2e5c90;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #d1e9ff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #d1e9ff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #4485ce;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #d1e9ff;
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-toggle {
+  border-color: #2e5c90;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #2e5c90;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #d1e9ff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #d1e9ff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #d1e9ff;
+    background-color: #2e5c90;
+  }
+}
+</style>	
+<div class="navbar navbar-default navbar-fixed-top">
 	
 		<div class="container">
 			<div class="row">
@@ -52,7 +142,7 @@
 		<div class="col-md-12">
 			<?php if ( ! empty($left_logo)) : ?>
 			<div class="site_logo">
-				<img src="<?php echo base_url(); ?>files/<?php echo $left_logo; ?>" />
+				<img style="margin-top: 13px" src="<?php echo base_url(); ?>files/<?php echo $left_logo; ?>" />
 			</div>
 			<?php endif; ?>
 			<div class="site_name">

@@ -1,3 +1,11 @@
+<style type="text/css">
+	
+.table thead tr th {
+	background-color: #4485ce;
+}
+
+</style>
+
 <script type="text/javascript">
 tinyMCE.init({
 	selector: "textarea",

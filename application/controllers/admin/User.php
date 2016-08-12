@@ -22,6 +22,8 @@ class User extends Admin_Controller
 		$this->load->model('category_manager');
 		$this->load->library('pagination');
 		$this->load->language('user');
+
+        if ($this->identity->is_dosen()) exit('403 forbidden');
 	}
 
 	/**
