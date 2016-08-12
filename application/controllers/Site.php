@@ -77,6 +77,53 @@ class Site extends MY_Controller
 		}
 	}
 
+	public function register()
+	{
+		$this->form_validation->set_rules('form[username]', $this->lang->line('username'), 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('form[password]', $this->lang->line('password'), 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('form[repeat_password]', $this->lang->line('repeat_password'), 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('form[name]', $this->lang->line('full_name'), 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('form[institution]', $this->lang->line('institution'), 'trim|required|max_length[50]');
+
+		if ($this->form_validation->run())
+		{
+			//
+			$reg_data = $this->input->post('form');
+			$uname = $reg_data['username'];
+			$sql = "select * from regrader.user where user.username = '$uname'";
+			$qry = $this->db->query($sql);
+			$res = $qry->row();
+
+			if ($res == null)
+			{
+				$this->load->model('user_manager');
+				$this->user_manager->insert_row([
+					'name' => $reg_data['name'],
+					'username' => $reg_data['username'],
+					'password' => md5($reg_data['password']),
+					'institution' => $reg_data['institution'],
+					'category_id' => $reg_data['category_id']
+				]);
+
+				$this->session->set_flashdata('reg_success', $this->lang->line('register_success'));
+				redirect('site/login');
+			} else {
+				$this->session->set_flashdata('error', $this->lang->line('register_error'));
+				redirect('site/register');
+			}
+		}
+		else
+		{
+			$this->load->model('category_manager');
+			$this->ui['header']['title'] = $this->lang->line('register');
+			$this->ui['header']['page'] = 'register';
+			$this->ui['content']['categories'] = $this->category_manager->get_rows(array('id >=' => 3));
+			$this->load->view('site/header', $this->ui['header']);
+			$this->load->view('site/register', $this->ui['content']);
+			$this->load->view('footer', $this->ui['footer']);
+		}
+	}
+
 	/**
 	 * Logs out the current user
 	 *
@@ -114,14 +161,14 @@ class Site extends MY_Controller
 				return;		
 			}
 
-			$grader_output = $this->build_grader();
+			/*$grader_output = $this->build_grader();
 			if ( ! empty($grader_output))
 			{
 				$data['heading'] = 'Error: cannot build grader engine';
 				$data['content'] = '<p>Please make sure that the web server has the permission to write to <b>' . getcwd() . '/moe</b>.<p>Build output:</p><pre>' . html_entity_decode($grader_output) . '</pre>';
 				$this->load->view('site/install', $data);
 				return;	
-			}
+			}*/
 
 			$this->create_db_schema();
 			$this->create_db_constraints();

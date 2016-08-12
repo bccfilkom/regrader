@@ -19,6 +19,16 @@
 		</div>
 	<?php endif; ?>
 
+	<?php if ($this->session->flashdata('reg_success')) : ?>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="alert alert-success">
+					<?php echo $this->session->flashdata('reg_success'); ?>
+			    </div>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<div class="row">
 		<div class="col-md-12">
 			<form class="form-horizontal" action="" method="post">
@@ -37,7 +47,8 @@
 					</div>
 				</div>
 				<div class="form-actions col-sm-offset-1">
-					<button type="submit" class="btn btn-danger col-sm-3"><i class="glyphicon glyphicon-user"></i> <?php echo $this->lang->line('login'); ?></button>
+					<button type="submit" class="btn btn-danger col-sm-2"><i class="glyphicon glyphicon-user"></i> <?php echo $this->lang->line('login'); ?></button>
+					<a href="<?php echo site_url('site/register'); ?>" style="margin-left: 13px" class="btn btn-primary col-sm-2"><i class="glyphicon glyphicon-user"></i> <?php echo $this->lang->line('register'); ?></a>
 				</div>
 			</form>
 		</div>

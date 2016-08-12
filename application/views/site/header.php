@@ -113,11 +113,13 @@
 					<ul class="nav navbar-nav">
 						<li class="active">
 							<a href="#">
-							<?php if ($page == 'login') : ?>
+							<?php if ($page == 'login') { ?>
 								<i class="glyphicon glyphicon-off"></i> <?php echo $this->lang->line('login'); ?>
-							<?php else : ?>
+							<?php } else if ($page == 'register') { ?>
+								<i class="glyphicon glyphicon-off"></i> <?php echo $this->lang->line('register'); ?>	
+							<?php } else { ?>
 								<i class="glyphicon glyphicon-list"></i> <?php echo $this->lang->line('scoreboard'); ?>
-							<?php endif; ?>
+							<?php } ?>
 							</a>
 						</li>
 					</ul>
