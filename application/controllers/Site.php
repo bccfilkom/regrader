@@ -94,7 +94,7 @@ class Site extends MY_Controller
 			$qry = $this->db->query($sql);
 			$res = $qry->row();
 
-			if ($res == null)
+			if ($res == null && $reg_data['password'] == $reg_data['repeat_password'])
 			{
 				$this->load->model('user_manager');
 				$this->user_manager->insert_row([
@@ -107,7 +107,9 @@ class Site extends MY_Controller
 
 				$this->session->set_flashdata('reg_success', $this->lang->line('register_success'));
 				redirect('site/login');
-			} else {
+			} 
+			else
+			{
 				$this->session->set_flashdata('error', $this->lang->line('register_error'));
 				redirect('site/register');
 			}
